@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/ML Career Transition Roadmap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --success: #4cc9f0;
+            --warning: #f8961e;
+            --danger: #f94144;
+            --dark: #1f2937;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 101;
+        }
+
+        .logo-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 8px;
+            position: relative;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.2rem;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        nav {
+            transition: var(--transition);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--primary-light);
+            opacity: 0.1;
+            border-radius: 50%;
+            z-index: -1;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 250px;
+            height: 250px;
+            background: var(--accent);
+            opacity: 0.1;
+            border-radius: 50%;
+            z-index: -1;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.05);
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            border-radius: 3px;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .section {
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+            border-radius: 3px 0 0 3px;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .phase-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+            flex-shrink: 0;
+        }
+
+        .phase-title {
+            margin: 0;
+        }
+
+        .course-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+            border-left: 3px solid var(--primary-light);
+        }
+
+        .course-card:hover {
+            background: #f0f4ff;
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .course-title {
+            margin: 0;
+            color: var(--primary);
+        }
+
+        .course-duration {
+            background: var(--primary-light);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .outcomes {
+            background: rgba(76, 201, 240, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 3px solid var(--success);
+        }
+
+        .outcomes-title {
+            color: var(--success);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: var(--primary-light);
+            top: 0;
+            bottom: 0;
+            left: 31px;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+            opacity: 0;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            left: 18px;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background: var(--primary-light);
+            opacity: 0.1;
+            border-radius: 50%;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover::before {
+            transform: scale(2.5);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--primary);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .feature-title {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            color: white;
+        }
+
+        .cta h2::after {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta .btn:hover {
+            background: var(--light);
+            color: var(--secondary);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--primary-light);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #adb5bd;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease-out both;
+        }
+
+        .animate-fadeInLeft {
+            animation: fadeInLeft 1s ease-out both;
+        }
+
+        .animate-fadeInRight {
+            animation: fadeInRight 1s ease-out both;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .timeline::after {
+                left: 50%;
+            }
+            
+            .timeline-item {
+                width: 50%;
+            }
+            
+            .left {
+                left: 0;
+                text-align: right;
+            }
+            
+            .right {
+                left: 50%;
+            }
+            
+            .left::after {
+                right: -12px;
+                left: auto;
+            }
+            
+            .right::after {
+                left: -12px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .left {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: white;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                padding: 80px 20px 20px;
+                z-index: 100;
+                overflow-y: auto;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 99;
+            }
+            
+            .overlay.active {
+                display: block;
+            }
+            
+            .mobile-menu-toggle.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            
+            .mobile-menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .mobile-menu-toggle.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            h3 {
+                font-size: 1.4rem;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .hero {
+                padding: 40px 0;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .phase-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .course-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            h4 {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+            
+            .course-card {
+                padding: 15px;
+            }
+            
+            .outcomes {
+                padding: 12px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+                padding-right: 15px;
+            }
+            
+            .timeline-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">AI</span>
+                <span>AI/ML Roadmap</span>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#phases">Learning Phases</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#job-market">Job Market</a></li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>6-Month AI/ML Career Transition Roadmap</h1>
+            <p class="subtitle">A comprehensive guide for non-IT professionals to transition into Artificial Intelligence and Machine Learning careers</p>
+            <a href="#phases" class="btn">Explore the Roadmap</a>
+        </div>
+    </section>
+
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Roadmap Overview</h2>
+            </div>
+            <div class="card">
+                <p>This roadmap is designed for professionals with no prior IT experience who want to transition into Artificial Intelligence and Machine Learning within a 6-month timeframe. The plan leverages Udemy courses by Krish Naik to provide a structured learning path from fundamental programming skills to advanced AI concepts.</p>
+                
+                <h3>Learning Path Structure</h3>
+                <p>The journey is divided into four major phases, with specific courses allocated to each phase:</p>
+                
+                <div class="grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">1</div>
+                        <h4 class="feature-title">Foundational Skills</h4>
+                        <p>Months 1-2</p>
+                        <ul>
+                            <li>Programming Fundamentals</li>
+                            <li>Mathematical Foundations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">2</div>
+                        <h4 class="feature-title">Data Analysis</h4>
+                        <p>Months 3-4</p>
+                        <ul>
+                            <li>Data Analysis Techniques</li>
+                            <li>Data Visualization</li>
+                            <li>SQL & Database Knowledge</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">3</div>
+                        <h4 class="feature-title">Machine Learning & AI</h4>
+                        <p>Months 4-5</p>
+                        <ul>
+                            <li>ML Algorithms</li>
+                            <li>Deep Learning</li>
+                            <li>NLP & Generative AI</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">4</div>
+                        <h4 class="feature-title">Applied AI & Deployment</h4>
+                        <p>Months 5-6</p>
+                        <ul>
+                            <li>Project-Based Learning</li>
+                            <li>MLOps & Deployment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="phases" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Detailed Course Progression</h2>
+            </div>
+            
+            <div class="card">
+                <div class="phase-header">
+                    <div class="phase-icon">1</div>
+                    <h3 class="phase-title">Phase 1: Foundational Skills</h3>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-header">
+                        <h4 class="course-title">Month 1: Python & Programming</h4>
+                        <span class="course-duration">4 weeks</span>
+                    </div>
+                    <p><strong>Course:</strong> Complete Python With DSA Bootcamp + LEETCODE Exercises</p>
+                    <ul>
+                        <li><strong>Week 1-2:</strong> Python basics (variables, data types, loops, functions)</li>
+                        <li><strong>Week 3:</strong> Python data structures (lists, dictionaries, sets, tuples)</li>
+                        <li><strong>Week 4:</strong> Basic algorithms and LeetCode problem-solving</li>
+                    </ul>
+                    <div class="outcomes">
+                        <div class="outcomes-title">Learning Outcomes:</div>
+                        <ul>
+                            <li>Proficiency in Python syntax and programming concepts</li>
+                            <li>Understanding of basic data structures and algorithms</li>
+                            <li>Problem-solving skills through coding challenges</li>
+                            <li>Ability to write clean, efficient code</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-header">
+                        <h4 class="course-title">Month 2: Mathematical Foundations</h4>
+                        <span class="course-duration">4 weeks</span>
+                    </div>
+                    <p><strong>Course:</strong> Mathematics-Basics to Advanced for Data Science And GenAI</p>
+                    <ul>
+                        <li><strong>Week 1:</strong> Linear algebra (vectors, matrices, operations)</li>
+                        <li><strong>Week 2:</strong> Statistics (descriptive statistics, distributions)</li>
+                        <li><strong>Week 3:</strong> Probability theory and statistical inference</li>
+                        <li><strong>Week 4:</strong> Differential calculus and optimization</li>
+                    </ul>
+                    <div class="outcomes">
+                        <div class="outcomes-title">Learning Outcomes:</div>
+                        <ul>
+                            <li>Understanding of mathematical concepts essential for ML algorithms</li>
+                            <li>Ability to interpret statistical data and metrics</li>
+                            <li>Knowledge of probability concepts used in machine learning models</li>
+                            <li>Foundation for understanding optimization in ML algorithms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="phase-header">
+                    <div class="phase-icon">2</div>
+                    <h3 class="phase-title">Phase 2: Data Analysis</h3>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-header">
+                        <h4 class="course-title">Month 3: Data Analysis</h4>
+                        <span class="course-duration">4 weeks</span>
+                    </div>
+                    <p><strong>Course:</strong> Complete Data Analyst Bootcamp From Basics To Advanced</p>
+                    <ul>
+                        <li><strong>Week 1:</strong> Data manipulation with Pandas</li>
+                        <li><strong>Week 2:</strong> Data visualization with Matplotlib, Seaborn</li>
+                        <li><strong>Week 3:</strong> SQL fundamentals and database operations</li>
+                        <li><strong>Week 4:</strong> Exploratory Data Analysis (EDA) techniques</li>
+                    </ul>
+                    <div class="outcomes">
+                        <div class="outcomes-title">Learning Outcomes:</div>
+                        <ul>
+                            <li>Proficiency in data cleaning and preparation</li>
+                            <li>Ability to create insightful visualizations</li>
+                            <li>Database querying skills</li>
+                            <li>Methods for exploring and understanding datasets</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="phase-header">
+                    <div class="phase-icon">3</div>
+                    <h3 class="phase-title">Phase 3: Machine Learning & AI</h3>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-header">
+                        <h4 class="course-title">Month 4: Machine Learning Fundamentals</h4>
+                        <span class="course-duration">4 weeks</span>
+                    </div>
+                    <p><strong>Course:</strong> Complete Data Science, Machine Learning, DL, NLP Bootcamp</p>
+                    <ul>
+                        <li><strong>Week 1:</strong> Supervised learning algorithms (regression, classification)</li>
+                        <li><strong>Week 2:</strong> Unsupervised learning and clustering</li>
+                        <li><strong>Week 3:</strong> Introduction to neural networks and deep learning</li>
+                        <li><strong>Week 4:</strong> Natural Language Processing basics</li>
+                    </ul>
+                    <div class="outcomes">
+                        <div class="outcomes-title">Learning Outcomes:</div>
+                        <ul>
+                            <li>Understanding of key ML algorithms and their applications</li>
+                            <li>Ability to train and evaluate ML models</li>
+                            <li>Foundation in neural network architecture</li>
+                            <li>Basic NLP techniques and applications</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-header">
+                        <h4 class="course-title">Month 5: Advanced AI & Generative Models</h4>
+                        <span class="course-duration">4 weeks</span>
+                    </div>
+                    <p><strong>Course:</strong> Complete Generative AI Course With Langchain and Huggingface</p>
+                    <ul>
+                        <li><strong>Week 1-2:</strong> Transformer models and attention mechanism</li>
+                        <li><strong>Week 3:</strong> Working with Huggingface ecosystem</li>
+                        <li><strong>Week 4:</strong> Building applications with Langchain</li>
+                    </ul>
+                    <div class="outcomes">
+                        <div class="outcomes-title">Learning Outcomes:</div>
+                        <ul>
+                            <li>Understanding of modern generative AI architectures</li>
+                            <li>Ability to use pre-trained models for various tasks</li>
+                            <li>Skills to build practical AI applications</li>
+                            <li>Knowledge of latest AI frameworks and tools</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="phase-header">
+                    <div class="phase-icon">4</div>
+                    <h3 class="phase-title">Phase 4: Applied AI & Deployment</h3>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-header">
+                        <h4 class="course-title">Late Month 5: Practical AI Projects</h4>
+                        <span class="course-duration">2 weeks</span>
+                    </div>
+                    <p><strong>Course:</strong> Building GEN AI App 12+ Hands-on Projects With Gemini Pro</p>
+                    <ul>
+                        <li><strong>Week 1-2:</strong> Building end-to-end AI applications</li>
+                        <li><strong>Focus areas:</strong> Chatbots, recommendation systems, text generation, image processing</li>
+                    </ul>
+                    <div class="outcomes">
+                        <div class="outcomes-title">Learning Outcomes:</div>
+                        <ul>
+                            <li>Experience with real-world AI application development</li>
+                            <li>Portfolio-worthy projects demonstrating AI capabilities</li>
+                            <li>Problem-solving in practical scenarios</li>
+                            <li>Integration of multiple AI components</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-header">
+                        <h4 class="course-title">Month 6: MLOps & Production Deployment</h4>
+                        <span class="course-duration">4 weeks</span>
+                    </div>
+                    <p><strong>Course:</strong> Complete MLOps Bootcamp With 10+ End To End ML Projects</p>
+                    <ul>
+                        <li><strong>Week 1:</strong> Model deployment strategies</li>
+                        <li><strong>Week 2:</strong> Monitoring and maintaining ML systems</li>
+                        <li><strong>Week 3-4:</strong> CI/CD for machine learning, containerization</li>
+                    </ul>
+                    <div class="outcomes">
+                        <div class="outcomes-title">Learning Outcomes:</div>
+                        <ul>
+                            <li>Understanding of ML lifecycle management</li>
+                            <li>Skills to deploy models to production</li>
+                            <li>Knowledge of best practices for maintaining AI systems</li>
+                            <li>Ability to create reproducible ML pipelines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Learning Timeline</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h4>Month 1</h4>
+                        <p>Python Programming Fundamentals</p>
+                        <ul>
+                            <li>Python syntax and basics</li>
+                            <li>Data structures</li>
+                            <li>Basic algorithms</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h4>Month 2</h4>
+                        <p>Mathematical Foundations</p>
+                        <ul>
+                            <li>Linear algebra</li>
+                            <li>Statistics</li>
+                            <li>Probability</li>
+                            <li>Calculus</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h4>Month 3</h4>
+                        <p>Data Analysis & Manipulation</p>
+                        <ul>
+                            <li>Pandas for data manipulation</li>
+                            <li>Data visualization</li>
+                            <li>SQL fundamentals</li>
+                            <li>Exploratory Data Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h4>Month 4</h4>
+                        <p>Machine Learning Fundamentals</p>
+                        <ul>
+                            <li>Supervised learning</li>
+                            <li>Unsupervised learning</li>
+                            <li>Neural networks intro</li>
+                            <li>NLP basics</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h4>Month 5</h4>
+                        <p>Advanced AI & Projects</p>
+                        <ul>
+                            <li>Transformer models</li>
+                            <li>Huggingface ecosystem</li>
+                            <li>Langchain applications</li>
+                            <li>Practical AI projects</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h4>Month 6</h4>
+                        <p>MLOps & Deployment</p>
+                        <ul>
+                            <li>Model deployment</li>
+                            <li>Monitoring ML systems</li>
+                            <li>CI/CD for ML</li>
+                            <li>Containerization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Supplementary Activities & Resources</h2>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Project Development</h3>
+                    <ul>
+                        <li>Build at least 3 end-to-end projects (increasing in complexity)</li>
+                        <li>Maintain a GitHub portfolio showcasing your work</li>
+                        <li>Document your learning journey through blog posts or articles</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Community Engagement</h3>
+                    <ul>
+                        <li>Join AI/ML communities (Reddit, Discord, Slack groups)</li>
+                        <li>Participate in forums like Stack Overflow or Cross Validated</li>
+                        <li>Attend virtual meetups or webinars on AI topics</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Practical Application</h3>
+                    <ul>
+                        <li>Participate in Kaggle competitions (start with "Getting Started" competitions)</li>
+                        <li>Contribute to open-source AI projects</li>
+                        <li>Apply AI solutions to problems in your current field</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Learning Reinforcement</h3>
+                    <ul>
+                        <li>Spend 1-2 hours weekly reviewing previous material</li>
+                        <li>Create flashcards for key concepts</li>
+                        <li>Teach concepts to others (reinforces understanding)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card" style="margin-top: 30px;">
+                <h3>Weekly Schedule Recommendation</h3>
+                <div class="grid" style="grid-template-columns: 1fr;">
+                    <div>
+                        <h4>Weekdays:</h4>
+                        <ul>
+                            <li><strong>Morning (30 mins):</strong> Review previous day's concepts</li>
+                            <li><strong>Evening (1-2 hours):</strong> Course videos and practice exercises</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>Weekends:</h4>
+                        <ul>
+                            <li><strong>Morning (2-3 hours):</strong> Course content and hands-on practice</li>
+                            <li><strong>Afternoon (2-3 hours):</strong> Project work and practical application</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" style="margin-top: 30px;">
+                <h3>Resource Allocation</h3>
+                <div class="grid" style="grid-template-columns: 1fr;">
+                    <div>
+                        <h4>Core Learning</h4>
+                        <p>15-20 hours per week</p>
+                    </div>
+                    
+                    <div>
+                        <h4>Project Work</h4>
+                        <p>5-8 hours per week</p>
+                    </div>
+                    
+                    <div>
+                        <h4>Review & Practice</h4>
+                        <p>3-5 hours per week</p>
+                    </div>
+                    
+                    <div>
+                        <h4>Community & Networking</h4>
+                        <p>1-2 hours per week</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="job-market" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transitioning to Job Market</h2>
+            </div>
+            
+            <div class="card">
+                <div>
+                    <h3>Resume Building</h3>
+                    <ul>
+                        <li>Highlight projects showing end-to-end implementation</li>
+                        <li>Emphasize technical skills and tools mastered</li>
+                        <li>Quantify achievements where possible</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Job Search Strategy</h3>
+                    <ul>
+                        <li>Target entry-level ML/AI engineer positions</li>
+                        <li>Consider AI-adjacent roles (data analyst, BI developer)</li>
+                        <li>Look for companies with mentorship opportunities</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Interview Preparation</h3>
+                    <ul>
+                        <li>Practice ML/AI conceptual questions</li>
+                        <li>Review programming fundamentals</li>
+                        <li>Prepare to discuss your portfolio projects in depth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your AI/ML Journey?</h2>
+            <p>This roadmap provides a structured approach to transition into AI/ML in just 6 months.</p>
+            <a href="#overview" class="btn">Begin Your Transition Today</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Roadmap</h4>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#phases">Learning Phases</a></li>
+                        <li><a href="#timeline">Timeline</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Recommended Books</a></li>
+                        <li><a href="#">Online Communities</a></li>
+                        <li><a href="#">Practice Platforms</a></li>
+                        <li><a href="#">Additional Courses</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Career</h4>
+                    <ul>
+                        <li><a href="#job-market">Job Market</a></li>
+                        <li><a href="#">Resume Templates</a></li>
+                        <li><a href="#">Interview Prep</a></li>
+                        <li><a href="#">Networking Tips</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 AI/ML Career Roadmap. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('nav');
+            const overlay = document.querySelector('.overlay');
+            
+            menuToggle.addEventListener('click', function() {
+                menuToggle.classList.toggle('active');
+                nav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+            });
+            
+            overlay.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Close menu when clicking a nav link
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menuToggle.classList.remove('active');
+                    nav.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Intersection Observer for animations
+            const cards = document.querySelectorAll('.card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+                // Set initial delay based on position
+                const delay = Array.from(cards).indexOf(card) * 0.1;
+                card.style.transitionDelay = `${delay}s`;
+            });
+            
+            // Animate timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        if (entry.target.classList.contains('left')) {
+                            entry.target.style.animation = 'fadeInLeft 0.8s ease-out forwards';
+                        } else {
+                            entry.target.style.animation = 'fadeInRight 0.8s ease-out forwards';
+                        }
+                        timelineObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            timelineItems.forEach(item => {
+                timelineObserver.observe(item);
+                // Set initial delay based on position
+                const delay = Array.from(timelineItems).indexOf(item) * 0.2;
+                item.style.transitionDelay = `${delay}s`;
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add touch support for mobile
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.style.transform = 'translateY(-5px)';
+                }, {passive: true});
+                
+                card.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                }, {passive: true});
+            });
+        });
+    </script>
+</body>
+</html>
